@@ -11,7 +11,7 @@ def load_model():
     model = models.resnet50(pretrained=False)
     num_ftrs = model.fc.in_features
     model.fc = nn.Linear(num_ftrs, 2)  # Adjust for the number of classes in your model
-    model.load_state_dict(torch.load('skin_disease_model.pth', map_location=torch.device('cpu')))
+    model.load_state_dict(torch.load('../model/skin_disease_detection_mobilenetV3_v3.pth', map_location=torch.device('cpu')))
     model.eval()  # Set to evaluation mode
     return model
 
